@@ -1,7 +1,8 @@
 // Dependencies
 
-import type { Input } from "./index";
-import { isNumber, getItemAtIndex } from "@helpers";
+import '../index.d.ts';
+import type { Input } from './index';
+import { isNumber, getItemAtIndex } from '@helpers';
 
 // Public
 
@@ -14,7 +15,7 @@ import { isNumber, getItemAtIndex } from "@helpers";
  */
 export function parseNumberFromString(input: string): number[] {
   return input
-    .split("")
+    .split('')
     .reduce(
       (arr: number[], char) => (isNumber(char) ? [...arr, Number(char)] : arr),
       []

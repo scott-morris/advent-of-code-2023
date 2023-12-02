@@ -1,25 +1,25 @@
 // Dependencies
 
-import { isNumber } from "@helpers";
-import { processLine } from "./part1";
+import { isNumber } from '@helpers';
+import { processLine } from './part1';
 
 // Types
 
-import "../index.d.ts";
-import type { Input } from "./index.ts";
+import '../index.d.ts';
+import type { Input } from './index.ts';
 
 // Public
 
 const DIGITS: { [key: string]: string } = {
-  one: "1",
-  two: "2",
-  three: "3",
-  four: "4",
-  five: "5",
-  six: "6",
-  seven: "7",
-  eight: "8",
-  nine: "9",
+  one: '1',
+  two: '2',
+  three: '3',
+  four: '4',
+  five: '5',
+  six: '6',
+  seven: '7',
+  eight: '8',
+  nine: '9',
 };
 
 /**
@@ -48,10 +48,10 @@ export function getAllDigits(input: string): string {
         }
       });
     }
-    line = remaining.join("");
+    line = remaining.join('');
   }
 
-  return digits.join("");
+  return digits.join('');
 }
 
 export default function part2(input: Input): Answer {

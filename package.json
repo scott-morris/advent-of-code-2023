@@ -2,13 +2,20 @@
   "name": "advent-of-code-2023",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "test": "bun test src"
+  },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "eslint": "^8.55.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "prettier-eslint": "^16.1.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "commander": "^11.1.0"
   }
 }

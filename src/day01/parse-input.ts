@@ -1,8 +1,8 @@
 // Dependencies
 
-import * as parse from "@helpers/parse-input.ts";
-import "../index.d.ts";
-import type { Input } from "./index.ts";
+import * as parse from '@helpers/parse-input.ts';
+import '../index.d.ts';
+import type { Input } from './index.ts';
 
 // Public
 

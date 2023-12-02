@@ -40,8 +40,7 @@ bun ./src/day##/index.ts
 ## Running the tests
 
 ```sh
-cd src
-bun test
+bun run test
 ```
 
 ## Using the template
