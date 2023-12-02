@@ -18,6 +18,13 @@ My goal is to have each solution fully tested and fully typed.
 git clone git@github.com:scott-morris/advent-of-code-2023.git
 ```
 
+### Install Bun
+
+```sh
+curl -fsSL https://bun.sh/install | bash
+```
+Note: at the time of development, I'm using Bun `1.0.14`
+
 ## Downloading your inputs
 
 ```sh
