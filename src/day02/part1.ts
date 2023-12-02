@@ -10,8 +10,8 @@ const MAX_RED = 12;
 const MAX_GREEN = 13;
 const MAX_BLUE = 14;
 
-export function isGamePossible(game: Game): boolean {
-  const { blue, green, red }: Pull = game.pulls.reduce(
+export function minimumNeeded(game: Game): Pull {
+  return game.pulls.reduce(
     (max_values, pull) => {
       return {
         blue: Math.max(pull.blue, max_values.blue),
@@ -21,7 +21,10 @@ export function isGamePossible(game: Game): boolean {
     },
     { blue: 0, green: 0, red: 0 } as Pull
   );
+}
 
+export function isGamePossible(game: Game): boolean {
+  const { red, green, blue } = minimumNeeded(game);
   return red <= MAX_RED && green <= MAX_GREEN && blue <= MAX_BLUE;
 }
 

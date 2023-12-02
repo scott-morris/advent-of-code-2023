@@ -7,8 +7,8 @@ import '../index.d.ts';
 // Dependencies
 
 import parseInput, { parsePull } from './parse-input.ts';
-import part1, { isGamePossible } from './part1.ts';
-import part2 from './part2.ts';
+import part1, { isGamePossible, minimumNeeded } from './part1.ts';
+import part2, { calculatePower } from './part2.ts';
 
 // Tests
 
@@ -89,11 +89,6 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`;
         const parsedInput = parseInput(rawInput1);
         expect(parsedInput).toStrictEqual(input1);
       });
-
-      test.skip('when given the sample input for step 2, it should return what we want to work with', () => {
-        const parsedInput = parseInput(rawInput2);
-        expect(parsedInput).toStrictEqual(input2);
-      });
     });
   });
 
@@ -111,6 +106,36 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`;
       });
     });
 
+    describe('minimumNeeded()', () => {
+      test('the minimum items needed should match the requirements', () => {
+        expect(minimumNeeded(input1[0])).toStrictEqual({
+          blue: 6,
+          green: 2,
+          red: 4,
+        });
+        expect(minimumNeeded(input1[1])).toStrictEqual({
+          blue: 4,
+          green: 3,
+          red: 1,
+        });
+        expect(minimumNeeded(input1[2])).toStrictEqual({
+          blue: 6,
+          green: 13,
+          red: 20,
+        });
+        expect(minimumNeeded(input1[3])).toStrictEqual({
+          blue: 15,
+          green: 3,
+          red: 14,
+        });
+        expect(minimumNeeded(input1[4])).toStrictEqual({
+          blue: 2,
+          green: 3,
+          red: 6,
+        });
+      });
+    });
+
     test('when given the sample input, the answer should be correct', () => {
       const result = part1(input1);
       expect(result).toEqual(8);
@@ -118,9 +143,19 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`;
   });
 
   describe('part2.ts', () => {
+    describe('calculatePower()', () => {
+      test('when given the games, it should match the specs', () => {
+        expect(calculatePower(input1[0])).toEqual(48);
+        expect(calculatePower(input1[1])).toEqual(12);
+        expect(calculatePower(input1[2])).toEqual(1560);
+        expect(calculatePower(input1[3])).toEqual(630);
+        expect(calculatePower(input1[4])).toEqual(36);
+      });
+    });
+
     test('when given the sample input, the answer should be correct', () => {
       const result = part2(input2);
-      expect(result).toEqual('TBD');
+      expect(result).toEqual(2286);
     });
   });
 });
