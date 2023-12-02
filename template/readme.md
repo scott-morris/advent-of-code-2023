@@ -1,4 +1,4 @@
-# 2022 Day <%= it.day %>
+# 2023 Day 1
 
 TBD
 

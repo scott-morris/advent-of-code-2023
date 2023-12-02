@@ -1,11 +1,11 @@
 // Dependencies
 
-import { parseStringArray } from "../helpers/parse.ts";
-import "../types/global.d.ts";
-import { Day<%= it.dayString %>Input } from "./types.d.ts";
+import * as parse from '@helpers/parse-input.ts';
+import '../index.d.ts';
+import type { Input } from './index.ts';
 
 // Public
 
-export default function parseInput(input: RawInput): Day<%= it.dayString %>Input {
-  return parseStringArray(input);
+export default function parseInput(input: string): Input {
+  return parse.arrayOfStrings(input);
 }

@@ -1,28 +1,29 @@
 // Dependencies
 
-import getInputFile from "../helpers/get-input-file.ts";
-import timeExecution from "../helpers/time-execution.ts";
-import displayOutput from "../helpers/display-output.ts";
-import "../types/global.d.ts";
+import { readFileSync } from 'fs';
+import path from 'path';
 
 // Local Dependencies
 
-import parseInput from "./parse-input.ts";
-import part1 from "./part1.ts";
-import part2 from "./part2.ts";
-import "./types.d.ts";
+import parseInput from './parse-input';
+import part1 from './part1';
+import part2 from './part2';
+
+// Types
+
+export type Input = string[];
 
 // Public
 
 async function main() {
-  const raw = await getInputFile(<%= it.day %>);
-
+  const raw = readFileSync(path.join(import.meta.dir, 'input.txt')).toString();
   const input = parseInput(raw);
 
-  const result1 = timeExecution(part1)(input);
-  const result2 = timeExecution(part2)(input);
+  const result1 = part1(input);
+  console.log(result1);
 
-  displayOutput(result1, result2);
+  const result2 = part2(input);
+  console.log(result2);
 }
 
 main();
