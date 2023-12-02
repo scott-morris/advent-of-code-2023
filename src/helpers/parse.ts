@@ -1,3 +1,7 @@
+export function parseArrayOfStrings(input: RawInput) {
+  return parseStringArray(input, "\n");
+}
+
 export function parseStringArray(
   input: RawInput,
   delimiter = ""
