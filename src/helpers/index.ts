@@ -1,3 +1,3 @@
-export * from "./array";
-export * from "./type-checks";
-export * from "./parse-input";
+export * from './array';
+export * from './type-checks';
+export * from './parse-input';

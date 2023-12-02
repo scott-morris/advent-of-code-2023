@@ -5,6 +5,7 @@ Either from learning my lesson from last year or just by coincidence, I didn't f
 ### Thoughts / Stuff I've Learned:
 * Bun is much more straightforward than Deno, especially in terms of dealing with the File System and imports
 * Bun has good integration with VSCode, and I'm immediately able to throw in some breakpoints and see what's happening when my tests aren't passing.
+* There were some edge cases that the examples didn't cover. I had to try a few things before I could nail it down.
 
 ### To Do Going Forward:
 * Reintroduce the timing functions. I always liked seeing how long the functions take to run, especially in the later dates.

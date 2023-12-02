@@ -12,7 +12,7 @@
  */
 export function arrayOfStrings(
   input: string,
-  delimiter = "\n"
+  delimiter = '\n'
 ): Input.StringArray {
   return Array.isArray(input) ? input : input.split(delimiter);
 }
@@ -31,11 +31,11 @@ export function arrayOfStrings(
  */
 export function arrayOfIntegers(
   input: string,
-  delimiter = "\n"
+  delimiter = '\n'
 ): Input.NumberArray {
   const arr = Array.isArray(input) ? input : input.split(delimiter);
   return arr.map((value: string | number) =>
-    typeof value === "number" ? value : parseInt(value, 10)
+    typeof value === 'number' ? value : parseInt(value, 10)
   );
 }
 
@@ -52,8 +52,8 @@ export function arrayOfIntegers(
  */
 export function stringMatrix(
   input: string,
-  columnDelimiter = "",
-  rowDelimiter = "\n"
+  columnDelimiter = '',
+  rowDelimiter = '\n'
 ): Input.StringMatrix {
   const rows = Array.isArray(input) ? input : input.split(rowDelimiter);
   return rows.map((row) => arrayOfStrings(row, columnDelimiter));
@@ -72,8 +72,8 @@ export function stringMatrix(
  */
 export function integerMatrix(
   input: RawInput,
-  columnDelimiter = "",
-  rowDelimiter = "\n"
+  columnDelimiter = '',
+  rowDelimiter = '\n'
 ): Input.NumberMatrix {
   const rows = Array.isArray(input) ? input : input.split(rowDelimiter);
   return rows.map((row) => arrayOfIntegers(row, columnDelimiter));

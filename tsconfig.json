@@ -15,10 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "types": [
-      "bun-types", // add Bun global
-      "./src/index.d.ts"
-    ],
+    "types": ["bun-types", "./src/index.d.ts"],
     "paths": {
       "@helpers": ["./src/helpers/index.ts"],
       "@helpers/*": ["./src/helpers/*"]
