@@ -13,6 +13,7 @@ declare global {
   namespace Input {
     type StringArray = string[];
     type NumberArray = number[];
+    type PatternArray = (RegExpMatchArray | null)[];
     type StringMatrix = Array<string[]>;
     type NumberMatrix = Array<number[]>;
   }

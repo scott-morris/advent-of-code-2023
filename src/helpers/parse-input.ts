@@ -39,6 +39,15 @@ export function arrayOfIntegers(
   );
 }
 
+export function arrayOfPatterns(
+  input: string,
+  regex: RegExp,
+  delimiter: '\n'
+): Input.PatternArray {
+  const arr = Array.isArray(input) ? input : input.split(delimiter);
+  return arr.map((value: string) => value.match(regex));
+}
+
 /**
  * Parse the raw AoC input into to handle as a string matrix
  * @param input the raw input from AoC
