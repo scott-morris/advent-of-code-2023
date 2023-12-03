@@ -2,7 +2,6 @@
 
 import '../index.d.ts';
 import type { Input } from './index';
-import { isNumber, getItemAtIndex } from '@helpers';
 
 // Public
 
