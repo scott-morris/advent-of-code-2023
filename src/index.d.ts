@@ -30,13 +30,9 @@ declare global {
 
   type Key = string | number;
 
-  interface MapCallbackFunction {
-    (value: unknown, key: Key, arr: Array<unknown>): void;
-  }
-
   type Stringable = string | string[] | number | number[] | null;
 
   type SimpleObject = {
-    [property: string | number]: string | number;
+    [key: Key]: string | number;
   };
 }
