@@ -7,7 +7,7 @@ import type { Input } from './index.ts';
 
 import parseInput from './parse-input.ts';
 import part1, { isValidPartNumber } from './part1.ts';
-import part2 from './part2.ts';
+import part2, { getGearRatio } from './part2.ts';
 import { Area } from '@helpers/matrix.ts';
 import { arrayOfStrings } from '@helpers/parse-input.ts';
 
@@ -72,7 +72,7 @@ describe('Day 3', () => {
         });
       });
 
-      test.skip('when given the sample input for step 1, it should return what we want to work with', () => {
+      test('when given the sample input for step 1, it should return what we want to work with', () => {
         const parsedInput = parseInput(rawInput1);
         expect(parsedInput).toStrictEqual(input1);
       });
@@ -125,9 +125,20 @@ describe('Day 3', () => {
   });
 
   describe('part2.ts', () => {
+    describe('getGearRatio()', () => {
+      test('it should calculate the gear ratios of valid gears and return 0 for others', () => {
+        expect(getGearRatio(input1.symbols[0], input1.numbers)).toEqual(16345);
+        expect(getGearRatio(input1.symbols[1], input1.numbers)).toEqual(0);
+        expect(getGearRatio(input1.symbols[2], input1.numbers)).toEqual(0);
+        expect(getGearRatio(input1.symbols[3], input1.numbers)).toEqual(0);
+        expect(getGearRatio(input1.symbols[4], input1.numbers)).toEqual(0);
+        expect(getGearRatio(input1.symbols[5], input1.numbers)).toEqual(451490);
+      });
+    });
+
     test('when given the sample input, the answer should be correct', () => {
-      const result = part2(input2);
-      expect(result).toEqual('TBD');
+      const result = part2(input1);
+      expect(result).toEqual(467835);
     });
   });
 });
