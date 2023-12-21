@@ -7,6 +7,7 @@
     "test": "bun test src"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.5",
     "bun-types": "latest",
     "eslint": "^8.55.0",
     "eslint-plugin-unused-imports": "^3.0.0",
